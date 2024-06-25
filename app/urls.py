@@ -22,6 +22,9 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.list_registers),
-    path('', RedirectView.as_view(url='/register'))
+    path('', RedirectView.as_view(url='/register')),
+    path('login/', views.login_user),
+    path('login/submit', views.submit_login),
+    path('logout/', views.logout_user)
    # path('', views.index)
 ]

@@ -1,0 +1,53 @@
+{% extends "modelpage.html" %}
+{% block content%}
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+            tr:hover {
+                background-color: #f5f5f5;
+                cursor: pointer;
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                color: inherit;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <h2>Register List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Categoria</th>
+                    <th>Autor</th>
+                    <th>Ano</th>
+                    <th>Acesso em</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for register in registers %}
+                <tr>
+                    <td><a href="/register/{{ register.id }}">{{ register.title }}</a></td>
+                    <td><a href="/register/{{ register.id }}">{{ register.category }}</a></td>
+                    <td><a href="/register/{{ register.id }}">{{ register.autor }}</a></td>
+                    <td><a href="/register/{{ register.id }}">{{ register.year }}</a></td>
+                    <td><a href="/register/{{ register.id }}">{{ register.get_data}}</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+   {% endblock %}

@@ -25,6 +25,7 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/register')),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
-    path('logout/', views.logout_user)
+    path('logout/', views.logout_user),
+    path('register/fichamento/', views.fichamento)
    # path('', views.index)
 ]

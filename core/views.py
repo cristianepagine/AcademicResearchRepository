@@ -45,3 +45,7 @@ def list_registers(request):
     
     response = {'registers': registers}
     return render(request, 'registers.html', response)
+
+@login_required(login_url='/login/')
+def fichamento(request):
+    return render(request, 'fichamento.html')
